@@ -9,8 +9,8 @@ import static org.junit.Assert.*;
  */
 public class RecordTest {
     @Test
-    public void addRow(String title) throws Exception {
-        Record record = new Record(title);
+    public void addRow() throws Exception {
+        Record record = new Record("");
         Row newRow = record.addRow("Hi");
         assertEquals("Hi", newRow.getText());
     }
