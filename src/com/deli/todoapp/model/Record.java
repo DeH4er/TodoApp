@@ -8,9 +8,19 @@ import java.util.List;
  */
 public class Record {
     private List<Row> rows;
+    private String title;
 
-    public Record() {
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Record(String title) {
         rows = new ArrayList<Row>();
+        this.title = title;
     }
 
     public Row addRow(String text) {

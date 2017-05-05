@@ -8,9 +8,13 @@ import java.util.ArrayList;
 public class Model {
     private ArrayList<Record> list;
 
-    public Record addRecord()
+    public Model() {
+        list = new ArrayList<Record>();
+    }
+
+    public Record addRecord(String title)
     {
-        Record rec = new Record();
+        Record rec = new Record(title);
         list.add(rec);
         return rec;
     }
