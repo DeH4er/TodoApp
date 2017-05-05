@@ -9,22 +9,22 @@ import static org.junit.Assert.*;
  */
 public class RecordTest {
     @Test
-    public void addRow() throws Exception {
-        Record record = new Record();
+    public void addRow(String title) throws Exception {
+        Record record = new Record(title);
         Row newRow = record.addRow("Hi");
         assertEquals("Hi", newRow.getText());
     }
 
     @Test
     public void getRowById() throws Exception {
-        Record record = new Record();
+        Record record = new Record("");
         Row newRow = record.addRow("Hi");
         assertEquals(newRow, record.getRowById(0));
     }
 
     @Test
     public void deleteRow() throws Exception {
-        Record record = new Record();
+        Record record = new Record("");
         Row newRow = record.addRow("Hi");
         Row newRow2 = record.addRow("Hi 2!");
         record.deleteRow(newRow2);
@@ -35,7 +35,7 @@ public class RecordTest {
 
     @Test
     public void deleteRowById() throws Exception {
-        Record record = new Record();
+        Record record = new Record("");
         record.addRow("Hi");
         record.addRow("Hi 2!");
         record.deleteRowById(1);
@@ -47,7 +47,7 @@ public class RecordTest {
 
     @Test
     public void updateRow() throws Exception {
-        Record record = new Record();
+        Record record = new Record("");
         Row first = record.addRow("Hi");
         record.addRow("Hi 2!");
         record.updateRow(first,"Changed");
@@ -56,7 +56,7 @@ public class RecordTest {
 
     @Test
     public void updateRowById() throws Exception {
-        Record record = new Record();
+        Record record = new Record("");
         Row first = record.addRow("Hi");
         record.addRow("Hi 2!");
         record.updateRowById(0,"Changed");
